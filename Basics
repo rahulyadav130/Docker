@@ -1,0 +1,36 @@
+Docker#
+IP CHECK for all running container
+docker inspect $(docker ps -aq) | grep "IPAddress" | awk 'FNR==3 {print}'
+
+# Create volume
+docker volume create vol1
+
+#
+docker volume inspect vol1
+## docker run -d --name rahulj1 -p 80:8080 -v rahuljenkins:/var/jenkins_home jenkins
+Local path
+docker run -d  --name rahul12 -v /vol/jen1:/var/jenkins_home -p 8080:8080 -p 2323:2323 jenkin
+
+# docker system df 				## will 
+
+
+Swarm initialized: current node (2k3ed22xt140e3224yq4qgo5z) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-6chr7jzz7e4azfx82e1yyd0xzfxdc4t1ywocena6xmc0rdg2sp-80y51cr8ueih91awwz7xd9kzx 192.168.232.135:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
+Restart Policy#
+docker run -dit --restart unless-stopped redis
+
+# create service#
+docker service create --name redis --replicas=5 redis:3.0.6
+
+# logs
+Docker logs containerID.  ### -t for time
+# will show all history inside the container.
+
+# docker pause container_id 
+

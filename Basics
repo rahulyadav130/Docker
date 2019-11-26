@@ -2,6 +2,10 @@ Docker#
 IP CHECK for all running container
 docker inspect $(docker ps -aq) | grep "IPAddress" | awk 'FNR==3 {print}'
 
+
+docker inspect (network/volume/container,etc) id
+
+
 # Create volume
 docker volume create vol1
 

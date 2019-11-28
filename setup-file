@@ -13,4 +13,9 @@
 yum list docker-ce --showduplicates | sort -r
 
 
+# start the services#
+systemctl enable  docker
+systemctl start  docker
+
+Above commands will start the docker service and make auto run system boot
     
